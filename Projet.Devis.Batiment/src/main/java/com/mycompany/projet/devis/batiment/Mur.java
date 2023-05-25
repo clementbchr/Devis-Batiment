@@ -22,32 +22,14 @@ public class Mur {
     private List<Revetement> listeRevetement;
     private double longueur;
 
-    private Revetement revetementSol;
-    private Revetement revetementPlafond;
 
-    public Revetement getRevetementSol() {
-        return revetementSol;
-    }
-
-    public void setRevetementSol(Revetement revetementSol) {
-        this.revetementSol = revetementSol;
-    }
-
-    public Revetement getRevetementPlafond() {
-        return revetementPlafond;
-    }
-
-    public void setRevetementPlafond(Revetement revetementPlafond) {
-        this.revetementPlafond = revetementPlafond;
-    }
+    
      
     public Mur(int idMur, Coin debut, Coin fin) {
         this.idMur = ++compteur;
         this.CoinDebut = debut;
         this.CoinFin = fin;
         this.listeRevetement = new ArrayList<>();
-        this.revetementSol = null;
-        this.revetementPlafond = null;
     }
     
 

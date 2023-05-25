@@ -14,12 +14,21 @@ public class Niveau {
     private double largeurCouloir;
     private Revetement revetementCouloir;
 
-    public Niveau(int idNiveau, double longueurCouloir, double largeurCouloir, Revetement revetementCouloir) {
+    /**
+     *
+     * @param idNiveau
+     * @param longueurCouloir
+     * @param largeurCouloir
+     * @param revetementCouloir
+     * @param listeAppartements
+     */
+    public Niveau(int idNiveau, double longueurCouloir, double largeurCouloir, Revetement revetementCouloir, List<Appartement> listeAppartements) {
         this.idNiveau = idNiveau;
         this.longueurCouloir = longueurCouloir;
         this.largeurCouloir = largeurCouloir;
         this.revetementCouloir = revetementCouloir;
         this.listeAppartements = new ArrayList<>();
+        this.listeAppartements = listeAppartements;
     }
 
     public void ajouterAppartement(Appartement appartement) {

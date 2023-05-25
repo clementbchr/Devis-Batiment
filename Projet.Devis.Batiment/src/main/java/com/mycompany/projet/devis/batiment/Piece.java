@@ -8,7 +8,6 @@ package com.mycompany.projet.devis.batiment;
  *
  * @author Elève
  */
-import java.util.ArrayList;
 import java.util.List;
 
 public class Piece {
@@ -16,8 +15,9 @@ public class Piece {
     private double hauteur;
     private Revetement revetementSol;
     private Revetement revetementPlafond;
+    private Revetement revetementMurs;
 
-    public Piece(List<Mur> listeMurs, double hauteur, Revetement revetementSol, Revetement revetementPlafond) {
+    public Piece(List<Mur> listeMurs, double hauteur, Revetement revetementSol, Revetement revetementPlafond, Revetement revetementMurs) {
         this.listeMurs = listeMurs;
         this.hauteur = hauteur;
         this.revetementSol = revetementSol;
@@ -29,7 +29,28 @@ public class Piece {
         return listeMurs;
     }
     
+    public Revetement getRevetementSol() {
+        return revetementSol;
+    }
+
+    public void setRevetementSol(Revetement revetementSol) {
+        this.revetementSol = revetementSol;
+    }
+    public Revetement getRevetementMurs() {
+        return revetementMurs;
+    }
     
+    public void setRevetementMurs(Revetement revetementMur) {
+        this.revetementMurs = revetementMur;
+    }
+
+    public Revetement getRevetementPlafond() {
+        return revetementPlafond;
+    }
+
+    public void setRevetementPlafond(Revetement revetementPlafond) {
+        this.revetementPlafond = revetementPlafond;
+    }
     
     public double surfaceSol() {
         double surface = 0;

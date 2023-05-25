@@ -9,7 +9,7 @@ package com.mycompany.projet.devis.batiment;
  * @author Elève
  */
 
-import java.util.HashMap;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -20,9 +20,7 @@ public class Revetement {
     private boolean pourSol;
     private boolean pourPlafond;
     private double prixUnitaire;
-    private static ArrayList<Revetement> listRevetements;
-
-    private static HashMap<Integer, Revetement> revetements = new HashMap<>();
+    private static List<Revetement> listRevetements = new ArrayList<>();
 
     public Revetement(int idRevetement, String designation, boolean pourMur, boolean pourSol, boolean pourPlafond, double prixUnitaire) {
         this.idRevetement = idRevetement;
@@ -56,14 +54,15 @@ public class Revetement {
     public double getPrixUnitaire() {
         return prixUnitaire;
     }
-    
-    public static void setListRevetements(ArrayList<Revetement> listRevetements) {
-        Revetement.listRevetements = listRevetements;
+
+    public static List<Revetement> getListRevetements() {
+        return listRevetements;
     }
-    
+
     public static void chargerRevetements() {
-    List<Revetement> listeRevetements = new ArrayList<>();
-    Object[][] data = {
+        listRevetements.clear();
+
+        Object[][] data = {
             {1, "Peinture", true, false, true, 10.95},
             {2, "Carrelage", true, true, false, 49.75},
             {3, "Lambris", true, true, true, 50.60},
@@ -82,21 +81,20 @@ public class Revetement {
             {16, "Stratifié", false, true, false, 31.99},
             {17, "Gazon", false, true, false, 17.95},
             {18, "Liège", false, true, false, 33.90}
-    };
+        };
 
-    for (Object[] row : data) {
-        int idRevetement = (int) row[0];
-        String designation = (String) row[1];
-        boolean pourMur = (boolean) row[2];
-        boolean pourSol = (boolean) row[3];
-        boolean pourPlafond = (boolean) row[4];
-        double prixUnitaire = (double) row[5];
+        for (Object[] row : data) {
+            int idRevetement = (int) row[0];
+            String designation = (String) row[1];
+            boolean pourMur = (boolean) row[2];
+            boolean pourSol = (boolean) row[3];
+            boolean pourPlafond = (boolean) row[4];
+            double prixUnitaire = (double) row[5];
 
-        Revetement revetement = new Revetement(idRevetement, designation, pourMur, pourSol, pourPlafond, prixUnitaire);
-        listeRevetements.add(revetement);
+            Revetement revetement = new Revetement(idRevetement, designation, pourMur, pourSol, pourPlafond, prixUnitaire);
+            listRevetements.add(revetement);
+        }
     }
-
-    setListRevetements(listRevetements);
 }
-}
+    
 

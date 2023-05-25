@@ -17,7 +17,7 @@ public class Appartement {
     private int niveau;
     private List<Piece> listePieces;
 
-    public Appartement(int idAppartement, int niveau) {
+    public Appartement(int idAppartement, int niveau, List<Piece> listePieces) {
         this.idAppartement = idAppartement;
         this.niveau = niveau;
         this.listePieces = new ArrayList<>();
@@ -25,6 +25,10 @@ public class Appartement {
 
     public int getIdAppartement() {
         return idAppartement;
+    }
+    
+    public List<Piece> getListePieces() {
+        return listePieces;
     }
 
     public int getNiveau() {
